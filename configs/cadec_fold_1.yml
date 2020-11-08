@@ -1,0 +1,53 @@
+data:
+  train:
+    target:
+      path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/train_labels.txt'
+    features:
+      entity:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/train_med_entities.txt'
+        params:
+          wordlevel: True
+          spell_checking: False
+          max_length: 30
+        type: 'sequence'
+      length:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/train_lengths.txt'
+        params:
+          dtype: 'int32'
+        type: 'numeric'
+      auxilary_features:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/train_sim_features.txt'
+        params:
+          dtype: 'float32'
+        type: 'numeric'
+  test:
+    target:
+      path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/test_labels.txt'
+    features:
+      entity:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/test_med_entities.txt'
+        params:
+          wordlevel: True
+          spell_checking: False
+          max_length: 30
+        type: 'sequence'
+      length:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/test_lengths.txt'
+        params:
+          dtype: 'int32'
+        type: 'numeric'
+      auxilary_features:
+        path: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/test_sim_features.txt'
+        params:
+          dtype: 'float32'
+        type: 'numeric'
+token_vocab_file: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/token_vocab.txt'
+label_vocab_file: '/root/DATA/medical_processing_corpora/AskAPatient/normalization_plain_fold_1/label_vocab.txt'
+pretrained_embeddings_file: '/root/DATA/EMBEDDINGS/Health_2.5mreviews.s200.w10.n5.v15.cbow.bin'
+classes_count: 1036
+rnn_num_units: 200
+attention_size: 10
+max_steps: 2000
+save_chkpts_steps: 500
+learning_rate: 0.001
+model_dir: '.tf-runs/cadec_fold_1_gru_attention_nolem_attn10'

@@ -1,0 +1,6 @@
+gensim==3.3.0
+nltk==3.2.5
+numpy==1.14.2
+tensorflow-hub==0.2.0
+tensorflow==1.12.0
+pyaml
